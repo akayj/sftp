@@ -18,7 +18,9 @@ import (
 )
 
 const (
-	SftpServerWorkerCount = 8
+	// SftpServerWorkerCount set to 1 to hanle one file in one goroutine
+	// otherwise handle func should handle disorder of packages from the same file.
+	SftpServerWorkerCount = 1
 )
 
 // Server is an SSH File Transfer Protocol (sftp) server.
